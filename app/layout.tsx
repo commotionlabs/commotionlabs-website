@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Commotion Labs - Strategy, Product & Venture Studio',
     description: 'We ignite commotion that creates lasting change.',
-    url: 'https://commotionlabs.com',
+    url: 'https://commotionlabs.github.io/commotionlabs-website/',
     siteName: 'Commotion Labs',
     locale: 'en_US',
     type: 'website',
@@ -44,10 +44,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#FF6B35" />
         
         {/* Favicons */}
-        <link rel="shortcut icon" href="/icons/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon-180x180.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/commotionlabs-website/icons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/commotionlabs-website/icons/favicon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/commotionlabs-website/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/commotionlabs-website/icons/favicon-16x16.png" />
         
         {/* Preload critical fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         
         {/* Commotion Labs Styles */}
-        <link rel="stylesheet" href="/app-commotion.css" />
+        <link rel="stylesheet" href="/commotionlabs-website/app-commotion.css" />
         
         {/* Enhanced Logo Styles */}
         <style>{`
@@ -219,7 +219,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         
         {/* Commotion Labs JavaScript */}
-        <script src="/app-commotion.js" async></script>
+        <script src="/commotionlabs-website/app-commotion.js" async></script>
         
         {/* Preloader Animation */}
         <style>{`
@@ -230,19 +230,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</style>
         
         {/* Remove preloader after load */}
-        <script>{`
-          window.addEventListener('load', function() {
-            setTimeout(function() {
-              const preloader = document.getElementById('preloader');
-              if (preloader) {
-                preloader.style.opacity = '0';
-                setTimeout(function() {
-                  preloader.remove();
-                }, 500);
-              }
-            }, 1000);
-          });
-        `}</script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('load', function() {
+              setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                  preloader.style.opacity = '0';
+                  setTimeout(function() {
+                    preloader.remove();
+                  }, 500);
+                }
+                document.body.classList.add('loaded');
+              }, 1000);
+            });
+          `
+        }} />
       </body>
     </html>
   );
