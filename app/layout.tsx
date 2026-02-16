@@ -20,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="32x32" href={`${basePath}/icons/favicon-32x32.png`} />
         <link rel="icon" type="image/png" sizes="16x16" href={`${basePath}/icons/favicon-16x16.png`} />
         <link rel="stylesheet" href={`${basePath}/app.css`} />
+        <link rel="stylesheet" href={`${basePath}/commotion-accent-overrides.css`} />
         <style>{`
           a.logo.text-logo {
             display: inline-flex;
@@ -72,10 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body>
-        {children}
-        <script src={`${basePath}/app.js`}></script>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
