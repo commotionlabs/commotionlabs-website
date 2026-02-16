@@ -3,14 +3,13 @@ const nextConfig = {
   // Static export configuration for GitHub Pages
   output: 'export',
   
+  // Configure for GitHub Pages subdirectory
+  basePath: '/commotionlabs-website',
+  assetPrefix: '/commotionlabs-website/',
+  
   // Disable server-side features for static export
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-  
-  // Configure for GitHub Pages subdirectory (if needed)
-  // If deploying to a custom domain, remove basePath and assetPrefix
-  basePath: '',
-  assetPrefix: '',
   
   // Image optimization disabled for static export
   images: {
