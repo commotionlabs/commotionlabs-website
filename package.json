@@ -1,15 +1,12 @@
 {
-  "name": "commotionlabs-website",
-  "version": "1.0.0",
-  "description": "Energy-driven website for Commotion Labs - Strategy, Product & Venture Studio",
-  "private": false,
+  "name": "helloelva-clone",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next build && next export",
     "start": "next start",
-    "lint": "eslint",
-    "deploy": "next build && touch out/.nojekyll && echo 'commotionlabs.com' > out/CNAME"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -25,21 +22,5 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/commotionlabs/commotionlabs-website.git"
-  },
-  "keywords": [
-    "commotion-labs",
-    "strategy",
-    "product-development", 
-    "venture-studio",
-    "nextjs",
-    "interactive-design",
-    "animation"
-  ],
-  "author": "Commotion Labs",
-  "license": "MIT",
-  "homepage": "https://commotionlabs.github.io/commotionlabs-website"
+  }
 }
