@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-      <Script src="/app.js" strategy="afterInteractive" />
+      <Script src="/commotionlabs-website/app.js" strategy="afterInteractive" />
     </>
   );
 }
